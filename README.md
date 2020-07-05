@@ -8,7 +8,7 @@ dataset_path <- "./insurance.csv"
 data <- read.csv(dataset_path, header=TRUE, sep=',')
 data$children <- as.factor(data$children)
 
-#Backward Selection with Adjusted R Squared:
+# Backward Selection with Adjusted R Squared:
 reg_backw <- backwardSelection_adjRsquared(data, response = "charges", verbose = TRUE)
 
 
