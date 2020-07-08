@@ -17,7 +17,7 @@ forwardSelection_adjRsquared <- function(df, response, max_steps = NaN, verbose 
       if (is.null(selected_vars)){
         vars <- var
       } else{
-        vars <- paste(selected_vars, var, sep = ' + ')    
+        vars <- paste(paste(selected_vars, collapse = ' + '), var, sep = ' + ')    
       }
       formula = paste(response, vars, sep = ' ~ ')
       summary <- summary(lm(as.formula(formula), data = df))
